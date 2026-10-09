@@ -1,0 +1,71 @@
+{
+  "name": "hitomi",
+  "uuid": "c8f3a1e2-7b4d-4e9a-8f2c-1d5a7b9e3f6a8",
+  "iconUrl": "https://hitomi.la/favicon.ico",
+  "describe": "hitomi.la 漫画源插件",
+  "version": "0.1.0",
+  "home": "https://hitomi.la",
+  "npmName": "breeze-plugin-hitomi",
+  "function": [
+    {
+      "id": "index",
+      "title": "最新",
+      "action": {
+        "type": "openComicList",
+        "payload": {
+          "scene": {
+            "title": "hitomi 最新",
+            "source": "c8f3a1e2-7b4d-4e9a-8f2c-1d5a7b9e3f6a8",
+            "body": {
+              "type": "pluginPagedComicList",
+              "request": {
+                "fnPath": "getRankingData",
+                "core": {},
+                "extern": {
+                  "source": "index",
+                  "language": "all"
+                }
+              }
+            },
+            "filter": {
+              "fnPath": "getRankingFilterBundle",
+              "extern": {
+                "source": "index"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "chinese",
+      "title": "汉化",
+      "action": {
+        "type": "openComicList",
+        "payload": {
+          "scene": {
+            "title": "hitomi 汉化",
+            "source": "c8f3a1e2-7b4d-4e9a-8f2c-1d5a7b9e3f6a8",
+            "body": {
+              "type": "pluginPagedComicList",
+              "request": {
+                "fnPath": "getRankingData",
+                "core": {},
+                "extern": {
+                  "source": "index",
+                  "language": "chinese"
+                }
+              }
+            },
+            "filter": {
+              "fnPath": "getRankingFilterBundle",
+              "extern": {
+                "source": "index"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
