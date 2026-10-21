@@ -7,9 +7,10 @@ export function buildPluginInfo(): InfoContract {
     uuid: PLUGIN_ID,
     iconUrl: "https://hitomi.la/favicon.ico",
     describe: "hitomi.la 漫画源插件",
-    version: "0.1.0",
+    version: "0.2.0",
     home: "https://hitomi.la",
     npmName: "breeze-plugin-hitomi",
+    haveHome: true,
     function: [
       {
         id: "index",

@@ -3,9 +3,10 @@
   "uuid": "c8f3a1e2-7b4d-4e9a-8f2c-1d5a7b9e3f6a8",
   "iconUrl": "https://hitomi.la/favicon.ico",
   "describe": "hitomi.la 漫画源插件",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "home": "https://hitomi.la",
   "npmName": "breeze-plugin-hitomi",
+  "haveHome": true,
   "function": [
     {
       "id": "index",

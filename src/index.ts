@@ -10,6 +10,7 @@ import type {
   ComicDetailNormal,
   ComicDetailPayload,
   ComicListItem,
+  ComicListScene,
   ComicListSceneBundleContract,
   ComicPagedListContract,
   CommentFeedContract,
@@ -24,6 +25,7 @@ import type {
   RecommendItem,
   SearchComicPayload,
   SearchResultContract,
+  PluginHomePagesBundleContract,
   SettingsBundleContract,
   CapabilitiesBundleContract,
 } from "breeze-plugin-kit";
@@ -612,6 +614,35 @@ async function getComicListSceneBundle(): Promise<ComicListSceneBundleContract> 
   };
 }
 
+function hitomiScene(title: string, language: string): ComicListScene {
+  return {
+    title,
+    source: PLUGIN_ID,
+    body: {
+      type: "pluginPagedComicList" as const,
+      request: {
+        fnPath: "getRankingData",
+        core: {},
+        extern: { area: "all", tag: "index", language },
+      },
+    },
+    filter: { fnPath: "getRankingFilterBundle", extern: {} },
+  };
+}
+
+async function getPluginHomePagesBundle(): Promise<PluginHomePagesBundleContract> {
+  return {
+    source: PLUGIN_ID,
+    scheme: { version: "1.0.0", type: "homePagesBundle" },
+    data: {
+      tabs: [
+        { id: "index", title: "最新", scene: hitomiScene("hitomi 最新", "all") },
+        { id: "chinese", title: "汉化", scene: hitomiScene("hitomi 汉化", "chinese") },
+      ],
+    },
+  };
+}
+
 async function getRankingData(payload: SearchComicPayload = {}): Promise<ComicPagedListContract> {
   const page = Math.max(1, toNumber(payload.page, 1));
   const extern = { ...asRecord(payload.extern) };
@@ -782,6 +813,7 @@ export default {
   getAdvancedSearchScheme,
   getComicListSceneBundle,
   getRankingData,
+  getPluginHomePagesBundle,
   getRankingFilterBundle,
   getSettingsBundle,
   getCapabilitiesBundle,
