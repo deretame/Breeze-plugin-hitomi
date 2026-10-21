@@ -13,7 +13,7 @@
 export const WEB_BASE = "https://hitomi.la";
 export const DATA_CDN = "https://ltn.gold-usergeneratedcontent.net";
 export const IMAGE_DOMAIN = "gold-usergeneratedcontent.net";
-export const UA = "Breeze-plugin-hitomi/0.1.0";
+export const UA = "Breeze-plugin-hitomi/0.2.0";
 
 export const PAGE_SIZE = 25;
 
