@@ -18,7 +18,7 @@ hitomi.la 漫画源插件。数据源全部走站内 Web 链路（无官方 App�
 
 ## 文档
 
-插件开发文档：[https://deretame.github.io/plugin-dev-docs/](https://deretame.github.io/plugin-dev-docs/)
+插件开发文档：[https://breeze-project-org.github.io/plugin-dev-docs/](https://breeze-project-org.github.io/plugin-dev-docs/)
 
 ## 已导出的 fnPath
 
